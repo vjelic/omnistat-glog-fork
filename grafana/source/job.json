@@ -23,7 +23,7 @@
         "hide": false,
         "iconColor": "text",
         "name": "User Annotations",
-        "step": "5s",
+        "step": "$interval",
         "titleFormat": "{{marker}}"
       }
     ]
