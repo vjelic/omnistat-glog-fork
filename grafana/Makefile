@@ -14,7 +14,7 @@ all: $(RMS) $(STANDALONE) $(USER) $(DOCKER)
 
 json-models/system/rms-%.json: source/%.json
 	./scripts/filter-dashboard --input $< \
-		--exclude-metrics rocm_throttle_events omnistat_network \
+		--exclude-metrics rocm_throttle_events omnistat_network omnistat_vendor_ \
 		--replace-name Source:RMS > $@
 
 json-models/system/standalone-%.json: json-models/system/rms-%.json
@@ -32,6 +32,7 @@ json-models/user/global.json: source/global.json
 
 json-models/user/job.json: source/job.json
 	./scripts/filter-dashboard --input $< \
+		--exclude-metrics omnistat_vendor_ \
 		--replace-name Source:User > $@
 
 # The job dashboard used in the local docker-based Grafana is the same as the
