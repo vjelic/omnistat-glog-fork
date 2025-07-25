@@ -2034,7 +2034,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 393
+            "y": 505
           },
           "id": 88,
           "interval": "$interval",
@@ -2144,7 +2144,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 393
+            "y": 505
           },
           "id": 89,
           "interval": "$interval",
@@ -2294,7 +2294,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 870
+            "y": 982
           },
           "id": 91,
           "interval": "$interval",
@@ -2445,7 +2445,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 878
+            "y": 990
           },
           "id": 99,
           "interval": "$interval",
@@ -2609,7 +2609,7 @@
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 878
+            "y": 990
           },
           "id": 100,
           "interval": "$interval",
@@ -2758,7 +2758,7 @@
             "h": 8,
             "w": 9,
             "x": 0,
-            "y": 394
+            "y": 506
           },
           "id": 28,
           "interval": "$interval",
@@ -2820,7 +2820,7 @@
             "h": 8,
             "w": 15,
             "x": 9,
-            "y": 394
+            "y": 506
           },
           "id": 86,
           "interval": "$interval",
@@ -2933,7 +2933,7 @@
             "h": 8,
             "w": 9,
             "x": 0,
-            "y": 780
+            "y": 892
           },
           "id": 29,
           "interval": "$interval",
@@ -2995,7 +2995,7 @@
             "h": 8,
             "w": 15,
             "x": 9,
-            "y": 780
+            "y": 892
           },
           "id": 31,
           "interval": "$interval",
@@ -3136,7 +3136,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 788
+            "y": 900
           },
           "id": 24,
           "interval": "$interval",
@@ -3210,7 +3210,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 395
+            "y": 507
           },
           "id": 27,
           "interval": "$interval",
@@ -3320,7 +3320,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 395
+            "y": 507
           },
           "id": 87,
           "interval": "$interval",
@@ -3470,7 +3470,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 406
+            "y": 518
           },
           "id": 90,
           "interval": "$interval",
@@ -3637,7 +3637,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 414
+            "y": 526
           },
           "id": 98,
           "interval": "$interval",
@@ -3817,7 +3817,7 @@
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 414
+            "y": 526
           },
           "id": 95,
           "interval": "$interval",
@@ -4088,7 +4088,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 423
+            "y": 535
           },
           "id": 52,
           "interval": "$interval",
@@ -4225,7 +4225,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4241,7 +4242,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 585
+            "y": 33
           },
           "id": 142,
           "interval": "$interval",
@@ -4334,7 +4335,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4350,7 +4352,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 593
+            "y": 41
           },
           "id": 33,
           "interval": "$interval",
@@ -4443,7 +4445,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4459,7 +4462,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 601
+            "y": 49
           },
           "id": 128,
           "interval": "$interval",
@@ -4552,7 +4555,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4568,7 +4572,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 609
+            "y": 57
           },
           "id": 129,
           "interval": "$interval",
@@ -4594,14 +4598,14 @@
                 "uid": "${source}"
               },
               "editorMode": "code",
-              "expr": "avg by (instance) (rocm_average_socket_power_watts * on (instance) group_left() rmsjob_info{jobid=\"$jobid\"})",
+              "expr": "sum by (instance) (rocm_average_socket_power_watts * on (instance) group_left() rmsjob_info{jobid=\"$jobid\"})",
               "instant": false,
               "legendFormat": "{{instance}}",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "GPU Power (W)",
+          "title": "Cumulative GPU Power (W)",
           "transformations": [
             {
               "id": "renameByRegex",
@@ -4661,7 +4665,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4677,7 +4682,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 617
+            "y": 65
           },
           "id": 130,
           "interval": "$interval",
@@ -4770,7 +4775,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4786,7 +4792,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 617
+            "y": 65
           },
           "id": 131,
           "interval": "$interval",
@@ -4909,7 +4915,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 799
+            "y": 911
           },
           "id": 143,
           "interval": "$interval",
@@ -5009,7 +5015,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 807
+            "y": 919
           },
           "id": 127,
           "interval": "$interval",
@@ -5109,7 +5115,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 815
+            "y": 927
           },
           "id": 104,
           "interval": "$interval",
@@ -5209,7 +5215,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 823
+            "y": 935
           },
           "id": 22,
           "interval": "$interval",
@@ -5309,7 +5315,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 831
+            "y": 943
           },
           "id": 25,
           "interval": "$interval",
@@ -5409,7 +5415,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 831
+            "y": 943
           },
           "id": 23,
           "interval": "$interval",
@@ -5507,8 +5513,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -5524,7 +5529,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 219
+            "y": 331
           },
           "id": 144,
           "interval": "$interval",
@@ -5617,8 +5622,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -5634,7 +5638,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 299
+            "y": 411
           },
           "id": 137,
           "interval": "$interval",
@@ -5727,8 +5731,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -5744,7 +5747,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 307
+            "y": 419
           },
           "id": 138,
           "interval": "$interval",
@@ -5837,8 +5840,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -5854,7 +5856,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 315
+            "y": 427
           },
           "id": 139,
           "interval": "$interval",
@@ -5947,8 +5949,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -5964,7 +5965,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 323
+            "y": 435
           },
           "id": 140,
           "interval": "$interval",
@@ -6057,8 +6058,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6074,7 +6074,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 323
+            "y": 435
           },
           "id": 141,
           "interval": "$interval",
@@ -6198,7 +6198,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 3791
+            "y": 3903
           },
           "id": 134,
           "interval": "$interval",
@@ -6322,7 +6322,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 3030
+            "y": 3142
           },
           "id": 125,
           "interval": "$interval",
@@ -6450,7 +6450,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 3751
+            "y": 3863
           },
           "id": 120,
           "options": {
@@ -6646,7 +6646,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 3751
+            "y": 3863
           },
           "id": 121,
           "options": {
@@ -6839,8 +6839,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6856,7 +6855,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 223
+            "y": 335
           },
           "id": 43,
           "interval": "$interval",
@@ -6949,8 +6948,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6966,7 +6964,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 223
+            "y": 335
           },
           "id": 48,
           "interval": "$interval",
@@ -7073,8 +7071,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -7090,7 +7087,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 224
+            "y": 336
           },
           "id": 40,
           "interval": "$interval",
@@ -7184,8 +7181,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -7201,7 +7197,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 224
+            "y": 336
           },
           "id": 42,
           "interval": "$interval",
@@ -7295,8 +7291,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -7312,7 +7307,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 280
+            "y": 392
           },
           "id": 105,
           "interval": "$interval",
@@ -7406,8 +7401,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -7423,7 +7417,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 280
+            "y": 392
           },
           "id": 106,
           "interval": "$interval",
@@ -7547,7 +7541,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 7758
+            "y": 7870
           },
           "id": 102,
           "interval": "$interval",
@@ -7657,7 +7651,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 7758
+            "y": 7870
           },
           "id": 103,
           "interval": "$interval",
@@ -7767,7 +7761,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 7766
+            "y": 7878
           },
           "id": 116,
           "interval": "$interval",
@@ -7877,7 +7871,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 7766
+            "y": 7878
           },
           "id": 117,
           "interval": "$interval",
@@ -8001,7 +7995,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 18532
+            "y": 18644
           },
           "id": 46,
           "interval": "$interval",
@@ -8110,7 +8104,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 18532
+            "y": 18644
           },
           "id": 45,
           "interval": "$interval",
@@ -8235,7 +8229,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 43
+            "y": 123
           },
           "id": 146,
           "interval": "$interval",
@@ -8329,8 +8323,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -8346,7 +8339,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 51
+            "y": 131
           },
           "id": 149,
           "interval": "$interval",
@@ -8439,8 +8432,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -8456,7 +8448,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 59
+            "y": 139
           },
           "id": 147,
           "interval": "$interval",
@@ -8549,8 +8541,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -8566,7 +8557,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 67
+            "y": 147
           },
           "id": 148,
           "interval": "$interval",
@@ -8690,7 +8681,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 3036
+            "y": 3148
           },
           "id": 135,
           "interval": "$interval",
@@ -8854,7 +8845,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 3085
+            "y": 3197
           },
           "id": 56,
           "interval": "$interval",
@@ -9078,7 +9069,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 17086
+            "y": 17198
           },
           "id": 107,
           "interval": "$interval",
@@ -9273,7 +9264,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 17086
+            "y": 17198
           },
           "id": 112,
           "interval": "$interval",
@@ -9432,7 +9423,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 17094
+            "y": 17206
           },
           "id": 108,
           "interval": "$interval",
@@ -9660,7 +9651,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 17094
+            "y": 17206
           },
           "id": 113,
           "interval": "$interval",
@@ -9815,7 +9806,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 17102
+            "y": 17214
           },
           "id": 109,
           "interval": "$interval",
@@ -10043,7 +10034,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 17102
+            "y": 17214
           },
           "id": 115,
           "interval": "$interval",
@@ -10199,7 +10190,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 17110
+            "y": 17222
           },
           "id": 110,
           "interval": "$interval",
@@ -10423,7 +10414,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 17110
+            "y": 17222
           },
           "id": 114,
           "interval": "$interval",
