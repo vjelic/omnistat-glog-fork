@@ -1,0 +1,424 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-309b1d9a-86c9-4ea1-9e0f-ec7904c44b1c",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Temp File/Directory Security Risk\" vulnerability in Python refers to the insecure creation or usage of temporary files or directories. In the provided code snippet, the filename is being created by concatenating a static string with the value of the \"USER\" environment variable. This can lead to a security risk if an attacker can control the \"USER\" environment variable, potentially leading to a directory traversal attack or the overwriting of critical files.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating temporary files or directories. Python's `tempfile` module provides such methods, which create temporary files in the most secure manner possible, regardless of the platform.\n\n## Source Code Fix\n\nHere is a recommended fix for the provided code snippet:\n\n```python\nimport tempfile\nimport json\n\n# Create a secure temporary file\ntemp = tempfile.NamedTemporaryFile(mode='w', delete=False)\n\n# Use the secure temporary file's name\nself.filename = temp.name\n\n# Write data to the temporary file\njson.dump(data, temp)\n\n# Close the file\ntemp.close()\n```\n\nIn this fixed code, the `tempfile.NamedTemporaryFile` function is used to securely create a temporary file. The `delete=False` argument is used to ensure that the file is not deleted when it is closed, allowing it to be used later in the program.\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- `tempfile`\n- `json`\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-a75a5afc-3378-46b2-8e12-4e264a853746",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation and use of temporary files or directories. This vulnerability can lead to a race condition where an attacker can create or modify the temporary file or directory during the small window of time between when the file or directory is created and when it is used. This can lead to unauthorized access, data corruption, or even code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating and using temporary files and directories. Python's `tempfile` module provides several functions for this purpose, such as `tempfile.mkstemp()` and `tempfile.mkdtemp()`, which create secure temporary files and directories respectively.\n\n## Source Code Fix Recommendation\n\nThe specific vulnerability sink in the provided code is not clear, as the code snippet does not show the creation or use of a temporary file or directory. However, if a temporary file is being created or used elsewhere in the code, it should be done securely using the `tempfile` module. For example:\n\n```python\nimport tempfile\n\n# Create a secure temporary file\ntemp = tempfile.mkstemp()\n\n# Use the temporary file\nwith open(temp[1], 'w') as temp_file:\n    temp_file.write(\"Some data\")\n\n# Delete the temporary file\nos.unlink(temp[1])\n```\n\n## Library Dependencies\n\nThe provided code snippet does not appear to require any specific library dependencies. However, the recommended code fix requires the `tempfile` and `os` modules, which are both part of the Python Standard Library.\n\n## OWASP and CWE Links\n\n- [OWASP - Insecure Temporary File](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-50f0a6ed-994f-40a0-961b-6b7d771e57df",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Temp File/Directory Security Risk\" vulnerability in Python refers to the insecure creation or usage of temporary files or directories. This can lead to several security risks such as race conditions, where an attacker can create a symbolic link to a critical system file in place of the intended temporary file, leading to unauthorized access or data corruption.\n\nIn the provided code snippet, the filename is being generated using user-supplied input (`results[\"RMS_JOB_USER\"]`). This can lead to potential security risks if the user input is not properly validated or sanitized.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to:\n\n- Avoid using user-supplied input to generate file names or paths.\n- Use secure methods for creating temporary files or directories. Python's `tempfile` module provides secure ways to create temporary files and directories.\n- Validate and sanitize user input to prevent potential security risks.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet using Python's `tempfile` module:\n\n```python\nimport tempfile\n\n# Create a secure temporary file\nwith tempfile.NamedTemporaryFile(suffix='_annotate.json', prefix='omnistat_', dir='/tmp', delete=False) as temp:\n    userFile = temp.name\n```\n\nIn this code, `tempfile.NamedTemporaryFile` is used to securely create a temporary file. The `suffix`, `prefix`, and `dir` parameters are used to control the file name and location. The `delete=False` parameter is used to ensure the file is not deleted when closed.\n\n## Library Dependencies\n\nThe code example requires the following Python library:\n\n- `tempfile`\n\n## References\n\n- [OWASP - Insecure Temporary File](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-9e2211c6-60df-44aa-89ef-dc1154640a79",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation and use of temporary files or directories. This vulnerability can lead to a race condition where an attacker can create or modify the temporary file or directory during the small window of time between when the file or directory is created and when it is used. This can lead to unauthorized access, data corruption, or even code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating and using temporary files and directories. Python's `tempfile` module provides several functions for this purpose, such as `tempfile.mkstemp()` and `tempfile.mkdtemp()`, which create secure temporary files and directories respectively.\n\n## Source Code Fix Recommendation\n\nThe provided code snippet does not show the creation or use of a temporary file or directory, so it's not possible to provide a specific fix. However, here is a general example of how to securely create and use a temporary file in Python:\n\n```python\nimport tempfile\nimport os\n\n# Securely create a temporary file\nfd, path = tempfile.mkstemp()\n\ntry:\n    with os.fdopen(fd, 'w') as tmp:\n        # Use the temporary file\n        tmp.write('Hello world!')\nfinally:\n    # Securely delete the temporary file\n    os.remove(path)\n```\n\n## Library Dependencies\n\nThe provided code snippet does not show the use of any library dependencies, so it's not possible to list any.\n\n## OWASP and CWE Links\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-34cb1971-10fd-4ccd-8757-00fd5e5aabff",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA Potential Interface Binding Vulnerability in Python occurs when a server is configured to listen on all interfaces (0.0.0.0), which can expose the server to the internet and make it vulnerable to attacks. This is a common mistake that developers make when configuring servers. It can lead to unauthorized access, data leakage, and other security issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to bind the server to localhost (127.0.0.1) or a specific IP address that is not publicly accessible. This will limit the exposure of the server to the internet and reduce the risk of attacks.\n\n## Source Code Fix Recommendation\n\nHere is a fixed version of the code:\n\n```python\n\"bind\": \"%s:%s\" % (\"127.0.0.1\", listenPort),\n```\n\nIn this case, the server is bound to localhost (127.0.0.1), which means it can only be accessed from the same machine.\n\n## Library Dependencies\n\nThe code example does not provide enough context to determine the library dependencies. However, if this is a part of a larger server configuration, it might require libraries such as `socket` or `flask`.\n\n## References\n\n- [CWE-933: Improper Authorization](https://cwe.mitre.org/data/definitions/933.html)\n\nPlease note that the links provided are active and accessible for anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B104"
+                ]
+              }
+            },
+            {
+              "id": "glog-e9e9224a-a830-4732-9476-979f9ddec1f3",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nPotential Interface Binding Vulnerability in Python refers to the situation where an application is configured to listen on all interfaces (0.0.0.0) and not just localhost (127.0.0.1). This could potentially expose the application to the internet, making it accessible to anyone who can reach your IP address. This can lead to unauthorized access and potential data breaches.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should bind your application to localhost (127.0.0.1) unless you have a specific need to make it accessible from other machines. If you do need to make it accessible from other machines, ensure that you have appropriate security measures in place, such as firewalls and authentication mechanisms.\n\n## Source Code Fix Recommendation\n\nChange the host parameter from \"0.0.0.0\" to \"127.0.0.1\" to bind the application to localhost:\n\n```python\napp.run(host=\"127.0.0.1\", port=listenPort)\n```\n\n## Library Dependencies\n\nThe code example requires the Flask library to execute properly.\n\n```python\nfrom flask import Flask\napp = Flask(__name__)\n```\n\n## References\n\n- [CWE-933: Improper Authorization](https://cwe.mitre.org/data/definitions/933.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B104"
+                ]
+              }
+            },
+            {
+              "id": "glog-d5fe0c09-2e0c-4a9e-8afb-dd9c596daa8c",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA Potential Interface Binding Vulnerability in Python occurs when a server is configured to listen on all interfaces (0.0.0.0), which can expose the server to the internet and make it vulnerable to attacks. This vulnerability is particularly dangerous if the server is running with elevated privileges or if it is hosting sensitive data.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, the server should be configured to listen only on the necessary interfaces. If the server is only needed for local development or for communication within a private network, it should be configured to listen on localhost (127.0.0.1) or on a private IP address.\n\n## Source Code Fix Recommendation\n\nInstead of binding the server to all interfaces, bind it to localhost or a private IP address. Here is an example of how to do this:\n\n```python\nif \"127.0.0.1\" in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n```\n\nIn this example, the server is only accessible from the same machine. If you need to make it accessible from other machines in a private network, replace \"127.0.0.1\" with the private IP address of the server.\n\n## Library Dependencies\n\nThe code example does not provide enough context to determine the library dependencies. However, it seems to be using a dictionary (`monitor.runtimeConfig`) to store configuration options, which is a built-in feature of Python and does not require any additional libraries.\n\n## OWASP and CWE Links\n\n- [CWE-732: Incorrect Permission Assignment for Critical Resource](https://cwe.mitre.org/data/definitions/732.html)\n\nPlease note that these links are subject to change and may not be accessible in the future."
+              },
+              "properties": {
+                "tags": [
+                  "B104"
+                ]
+              }
+            },
+            {
+              "id": "glog-8d593234-c1b4-4a2a-b561-c96e2fc49d81",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation and use of temporary files or directories. This vulnerability can lead to a race condition where an attacker can create or modify the temporary file or directory during the small time window between when the file or directory is created and when it is used. This can lead to unauthorized access, data corruption, or even code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating and using temporary files and directories. Python's `tempfile` module provides several functions to create temporary files and directories securely. These functions generate random, unguessable names for the temporary files and directories, and set appropriate file permissions to restrict access to the temporary files and directories.\n\n## Source Code Fix Recommendation\n\nThe code snippet provided does not seem to contain a vulnerability sink related to the \"Potential Unsafe Use of Temporary File/Directory\" vulnerability. However, if the `detection_file` variable is used to create or use a temporary file or directory, it should be replaced with a secure method from the `tempfile` module. For example:\n\n```python\nimport tempfile\n\n# Create a temporary file securely\nwith tempfile.NamedTemporaryFile() as temp:\n    detection_file = temp.name\n    # Use the temporary file\n```\n\n## Library Dependencies\n\nThe code snippet does not provide enough context to determine the library dependencies. However, if the `tempfile` module is used as recommended, Python's standard library is sufficient.\n\n## OWASP and CWE Links\n\n- [OWASP - Insecure Temporary File](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-309b1d9a-86c9-4ea1-9e0f-ec7904c44b1c",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Temp File/Directory Security Risk"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/annotate.py"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 25,
+                  "endLine": 45,
+                  "endColumn": 41,
+                  "snippet": {
+                    "text": "        self.filename = \"/tmp/omnistat_\" + os.environ.get(\"USER\") + \"_annotate.json\"\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 44,
+                  "endLine": 46,
+                  "snippet": {
+                    "text": "    def __init__(self):\n        self.filename = \"/tmp/omnistat_\" + os.environ.get(\"USER\") + \"_annotate.json\"\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-a75a5afc-3378-46b2-8e12-4e264a853746",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/monitor.py"
+                },
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 39,
+                  "endLine": 115,
+                  "endColumn": 61,
+                  "snippet": {
+                    "text": "            self.jobDetection[\"file\"] = config[\"omnistat.collectors.rms\"].get(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 114,
+                  "endLine": 118,
+                  "snippet": {
+                    "text": "            self.jobDetection[\"file\"] = config[\"omnistat.collectors.rms\"].get(\n                \"job_detection_file\", \"/tmp/omni_rmsjobinfo\"\n            )\n            self.jobDetection[\"stepfile\"] = config[\"omnistat.collectors.rms\"].get(\n                \"step_detection_file\", \"/tmp/omni_rmsjobinfo_step\"\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-50f0a6ed-994f-40a0-961b-6b7d771e57df",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Temp File/Directory Security Risk"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/collector_rms.py"
+                },
+                "region": {
+                  "startLine": 204,
+                  "startColumn": 28,
+                  "endLine": 204,
+                  "endColumn": 60,
+                  "snippet": {
+                    "text": "                userFile = \"/tmp/omnistat_%s_annotate.json\" % results[\"RMS_JOB_USER\"]\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 203,
+                  "endLine": 205,
+                  "snippet": {
+                    "text": "            if self.__annotationsEnabled:\n                userFile = \"/tmp/omnistat_%s_annotate.json\" % results[\"RMS_JOB_USER\"]\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-9e2211c6-60df-44aa-89ef-dc1154640a79",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/monitor.py"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 40,
+                  "endLine": 118,
+                  "endColumn": 67,
+                  "snippet": {
+                    "text": "            self.jobDetection[\"stepfile\"] = config[\"omnistat.collectors.rms\"].get(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 117,
+                  "endLine": 121,
+                  "snippet": {
+                    "text": "            self.jobDetection[\"stepfile\"] = config[\"omnistat.collectors.rms\"].get(\n                \"step_detection_file\", \"/tmp/omni_rmsjobinfo_step\"\n            )\n            if config.has_option(\"omnistat.collectors.rms\", \"host_skip\"):\n                self.runtimeConfig[\"rms_collector_host_skip\"] = config[\"omnistat.collectors.rms\"][\"host_skip\"]\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-34cb1971-10fd-4ccd-8757-00fd5e5aabff",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Interface Binding Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/node_monitoring.py"
+                },
+                "region": {
+                  "startLine": 101,
+                  "startColumn": 28,
+                  "endLine": 101,
+                  "endColumn": 37,
+                  "snippet": {
+                    "text": "        \"bind\": \"%s:%s\" % (\"0.0.0.0\", listenPort),\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 100,
+                  "endLine": 102,
+                  "snippet": {
+                    "text": "    options = {\n        \"bind\": \"%s:%s\" % (\"0.0.0.0\", listenPort),\n        \"workers\": 1,\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-e9e9224a-a830-4732-9476-979f9ddec1f3",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Interface Binding Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/standalone.py"
+                },
+                "region": {
+                  "startLine": 407,
+                  "startColumn": 18,
+                  "endLine": 407,
+                  "endColumn": 27,
+                  "snippet": {
+                    "text": "    app.run(host=\"0.0.0.0\", port=listenPort)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 406,
+                  "endLine": 408,
+                  "snippet": {
+                    "text": "    listenPort = config[\"omnistat.collectors\"].get(\"port\", 8001)\n    app.run(host=\"0.0.0.0\", port=listenPort)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-d5fe0c09-2e0c-4a9e-8afb-dd9c596daa8c",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Interface Binding Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/node_monitoring.py"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 12,
+                  "endLine": 83,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "        if \"0.0.0.0\" in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 82,
+                  "endLine": 84,
+                  "snippet": {
+                    "text": "    def restrict_ips():\n        if \"0.0.0.0\" in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n            return\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-8d593234-c1b4-4a2a-b561-c96e2fc49d81",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/omni_util.py"
+                },
+                "region": {
+                  "startLine": 362,
+                  "startColumn": 39,
+                  "endLine": 363,
+                  "endColumn": 61,
+                  "snippet": {
+                    "text": "            detection_file = self.runtimeConfig[\"omnistat.collectors.rms\"].get(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 362,
+                  "endLine": 366,
+                  "snippet": {
+                    "text": "            detection_file = self.runtimeConfig[\"omnistat.collectors.rms\"].get(\n                \"job_detection_file\", \"/tmp/omni_rmsjobinfo\"\n            )\n            if self.__rms == \"slurm\":\n                numNodes = os.getenv(\"SLURM_JOB_NUM_NODES\")\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
