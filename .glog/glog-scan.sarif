@@ -36,6 +36,30 @@
               }
             },
             {
+              "id": "6f5fc110-11ba-3c75-bcb0-978c1a4ff23b",
+              "name": "resources.rules.missing-image-version",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-image-version"
+              },
+              "fullDescription": {
+                "text": "Images should be tagged with an explicit version to produce deterministic container images."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-image-version"
+                ]
+              }
+            },
+            {
               "id": "f692ccc3-75da-3ca7-8258-06ad0749bc4f",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -85,50 +109,26 @@
               }
             },
             {
-              "id": "6f5fc110-11ba-3c75-bcb0-978c1a4ff23b",
-              "name": "resources.rules.missing-image-version",
+              "id": "643e5ec1-e824-3c96-a73a-25415f1185e5",
+              "name": "resources.rules.use-timeout",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-image-version"
+                "text": "Opengrep Finding: resources.rules.use-timeout"
               },
               "fullDescription": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images."
+                "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n"
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "warning"
               },
               "help": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
+                "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.missing-image-version"
-                ]
-              }
-            },
-            {
-              "id": "73b78785-5e13-3bf2-b232-a50e095162b1",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
+                  "resources.rules.use-timeout"
                 ]
               }
             },
@@ -157,7 +157,31 @@
               }
             },
             {
-              "id": "643e5ec1-e824-3c96-a73a-25415f1185e5",
+              "id": "73b78785-5e13-3bf2-b232-a50e095162b1",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "6337154b-45ba-3555-a118-fc1cd3480e07",
               "name": "resources.rules.use-timeout",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-timeout"
@@ -181,7 +205,31 @@
               }
             },
             {
-              "id": "6337154b-45ba-3555-a118-fc1cd3480e07",
+              "id": "8d2fa863-c130-388e-90f8-3b2ae44d3fb7",
+              "name": "resources.rules.arbitrary-sleep",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
+              },
+              "fullDescription": {
+                "text": "time.sleep() call; did you mean to leave this in?"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "time.sleep() call; did you mean to leave this in?\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "time.sleep() call; did you mean to leave this in?\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.arbitrary-sleep"
+                ]
+              }
+            },
+            {
+              "id": "e1794f96-921f-3787-9801-d97079c74180",
               "name": "resources.rules.use-timeout",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-timeout"
@@ -229,30 +277,6 @@
               }
             },
             {
-              "id": "8d2fa863-c130-388e-90f8-3b2ae44d3fb7",
-              "name": "resources.rules.arbitrary-sleep",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
-              },
-              "fullDescription": {
-                "text": "time.sleep() call; did you mean to leave this in?"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "time.sleep() call; did you mean to leave this in?\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "time.sleep() call; did you mean to leave this in?\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.arbitrary-sleep"
-                ]
-              }
-            },
-            {
               "id": "e52105a5-6e2f-372c-966e-a2f1f1093b94",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -273,30 +297,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "e1794f96-921f-3787-9801-d97079c74180",
-              "name": "resources.rules.use-timeout",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-timeout"
-              },
-              "fullDescription": {
-                "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-timeout"
                 ]
               }
             },
@@ -422,30 +422,6 @@
               }
             },
             {
-              "id": "80164702-4a08-365e-92b6-b9830410fd31",
-              "name": "resources.rules.useless-inner-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.useless-inner-function"
-              },
-              "fullDescription": {
-                "text": "function `$FF` is defined inside a function but never used"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "function `$FF` is defined inside a function but never used\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "function `$FF` is defined inside a function but never used\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.useless-inner-function"
-                ]
-              }
-            },
-            {
               "id": "03c40b4c-2cce-370b-99b6-7e61ca8bd8b3",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -466,6 +442,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "80164702-4a08-365e-92b6-b9830410fd31",
+              "name": "resources.rules.useless-inner-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.useless-inner-function"
+              },
+              "fullDescription": {
+                "text": "function `$FF` is defined inside a function but never used"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "function `$FF` is defined inside a function but never used\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "function `$FF` is defined inside a function but never used\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.useless-inner-function"
                 ]
               }
             },
@@ -494,30 +494,6 @@
               }
             },
             {
-              "id": "5071ebca-8018-3e3f-8b11-bc36c7c27ea7",
-              "name": "resources.rules.arbitrary-sleep",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
-              },
-              "fullDescription": {
-                "text": "time.sleep() call; did you mean to leave this in?"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "time.sleep() call; did you mean to leave this in?\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "time.sleep() call; did you mean to leave this in?\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.arbitrary-sleep"
-                ]
-              }
-            },
-            {
               "id": "e1d3670c-eafe-3ffe-a295-1ab2f04d491a",
               "name": "python.lang.compatibility.python37.python37-compatibility-importlib2",
               "shortDescription": {
@@ -539,6 +515,30 @@
                 "precision": "very-high",
                 "tags": [
                   "python.lang.compatibility.python37.python37-compatibility-importlib2"
+                ]
+              }
+            },
+            {
+              "id": "5071ebca-8018-3e3f-8b11-bc36c7c27ea7",
+              "name": "resources.rules.arbitrary-sleep",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
+              },
+              "fullDescription": {
+                "text": "time.sleep() call; did you mean to leave this in?"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "time.sleep() call; did you mean to leave this in?\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "time.sleep() call; did you mean to leave this in?\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.arbitrary-sleep"
                 ]
               }
             },
@@ -591,30 +591,6 @@
               }
             },
             {
-              "id": "a40e9964-b5b8-3df6-8553-06d8e18cb47a",
-              "name": "resources.rules.dangerous-subprocess-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
-              },
-              "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dangerous-subprocess-use"
-                ]
-              }
-            },
-            {
               "id": "4e4779a6-82fb-34ac-bcdc-fc5ed2de3405",
               "name": "resources.rules.arbitrary-sleep",
               "shortDescription": {
@@ -635,30 +611,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.arbitrary-sleep"
-                ]
-              }
-            },
-            {
-              "id": "95b230d9-b206-382a-b2b3-08adfe4f79f4",
-              "name": "resources.rules.dangerous-subprocess-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
-              },
-              "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dangerous-subprocess-use"
                 ]
               }
             },
@@ -687,7 +639,55 @@
               }
             },
             {
-              "id": "ee05b6a9-7964-30bf-a31f-420f40e5f3a2",
+              "id": "95b230d9-b206-382a-b2b3-08adfe4f79f4",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
+                ]
+              }
+            },
+            {
+              "id": "a40e9964-b5b8-3df6-8553-06d8e18cb47a",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
+                ]
+              }
+            },
+            {
+              "id": "02bec693-900a-309a-a8e3-e0688e6bc047",
               "name": "resources.rules.use-raise-for-status",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-raise-for-status"
@@ -711,7 +711,7 @@
               }
             },
             {
-              "id": "02bec693-900a-309a-a8e3-e0688e6bc047",
+              "id": "ee05b6a9-7964-30bf-a31f-420f40e5f3a2",
               "name": "resources.rules.use-raise-for-status",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-raise-for-status"
@@ -759,6 +759,31 @@
               }
             },
             {
+              "id": "59899cfe-f628-362a-8105-8588c9f83375",
+              "name": "python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host",
+              "shortDescription": {
+                "text": "Opengrep Finding: python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host"
+              },
+              "fullDescription": {
+                "text": "Running flask app with host 0.0.0.0 could expose the server publicly."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "helpUri": "https://semgrep.dev/r/python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host",
+              "help": {
+                "text": "Running flask app with host 0.0.0.0 could expose the server publicly.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Running flask app with host 0.0.0.0 could expose the server publicly.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host)\n - [https://owasp.org/Top10/A01_2021-Broken_Access_Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host"
+                ]
+              }
+            },
+            {
               "id": "e7adfcb3-b97f-3025-92ad-96c9e82c976e",
               "name": "resources.rules.arbitrary-sleep",
               "shortDescription": {
@@ -779,6 +804,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.arbitrary-sleep"
+                ]
+              }
+            },
+            {
+              "id": "4a5ea367-c80a-3276-9b92-746f900256f7",
+              "name": "resources.rules.useless-inner-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.useless-inner-function"
+              },
+              "fullDescription": {
+                "text": "function `$FF` is defined inside a function but never used"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "function `$FF` is defined inside a function but never used\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "function `$FF` is defined inside a function but never used\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.useless-inner-function"
                 ]
               }
             },
@@ -808,31 +857,6 @@
               }
             },
             {
-              "id": "59899cfe-f628-362a-8105-8588c9f83375",
-              "name": "python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host",
-              "shortDescription": {
-                "text": "Opengrep Finding: python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host"
-              },
-              "fullDescription": {
-                "text": "Running flask app with host 0.0.0.0 could expose the server publicly."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "helpUri": "https://semgrep.dev/r/python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host",
-              "help": {
-                "text": "Running flask app with host 0.0.0.0 could expose the server publicly.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Running flask app with host 0.0.0.0 could expose the server publicly.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host)\n - [https://owasp.org/Top10/A01_2021-Broken_Access_Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host"
-                ]
-              }
-            },
-            {
               "id": "2e1ca249-e1b5-3beb-a008-2c13e2fd59e1",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -853,30 +877,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "4a5ea367-c80a-3276-9b92-746f900256f7",
-              "name": "resources.rules.useless-inner-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.useless-inner-function"
-              },
-              "fullDescription": {
-                "text": "function `$FF` is defined inside a function but never used"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "function `$FF` is defined inside a function but never used\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "function `$FF` is defined inside a function but never used\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.useless-inner-function"
                 ]
               }
             },
@@ -1043,6 +1043,37 @@
           "properties": {}
         },
         {
+          "ruleId": "6f5fc110-11ba-3c75-bcb0-978c1a4ff23b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "FROM victoriametrics/victoria-metrics"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "204d465da9eb738cfbc0041644f0f5edc577328b81eb614082ce786b9418180bb2395ed7b3ab6bb0e18c41429c9aee8b635d6c8d78b5ff3408b35e279f34e66e_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "f692ccc3-75da-3ca7-8258-06ad0749bc4f",
           "kind": "fail",
           "level": "warning",
@@ -1105,64 +1136,33 @@
           "properties": {}
         },
         {
-          "ruleId": "6f5fc110-11ba-3c75-bcb0-978c1a4ff23b",
+          "ruleId": "643e5ec1-e824-3c96-a73a-25415f1185e5",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+            "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "docker/Dockerfile",
+                  "uri": "grafana/scripts/sync-dashboards",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 21,
+                  "startLine": 51,
+                  "startColumn": 16,
+                  "endLine": 51,
+                  "endColumn": 50,
                   "snippet": {
-                    "text": "FROM victoriametrics/victoria-metrics"
+                    "text": "    response = requests.get(url, headers=headers)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "204d465da9eb738cfbc0041644f0f5edc577328b81eb614082ce786b9418180bb2395ed7b3ab6bb0e18c41429c9aee8b635d6c8d78b5ff3408b35e279f34e66e_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "73b78785-5e13-3bf2-b232-a50e095162b1",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `replace_pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "grafana/scripts/filter-dashboard",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 105,
-                  "startColumn": 13,
-                  "endLine": 105,
-                  "endColumn": 57,
-                  "snippet": {
-                    "text": "    found = re.match(replace_pattern, args.replace_name)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "337e8254a996cef23ba6f1ecf03ff30a4e4e9b12625a93c21378aac2c80e2010c5c0f128fe6f13991b11dbebcfba0f14dfcaca29809cf557ae6a47727951ff46_0"
+            "matchBasedId/v1": "e5eda1921472627fe8c10aa610e9e8dc3a6966f9099fffb7d9cee48b851b80fa9510015362242550d1d86f6c25f6e81e9464ebb700bc4afb77eb41cf4481ffff_0"
           },
           "properties": {}
         },
@@ -1198,33 +1198,33 @@
           "properties": {}
         },
         {
-          "ruleId": "643e5ec1-e824-3c96-a73a-25415f1185e5",
+          "ruleId": "73b78785-5e13-3bf2-b232-a50e095162b1",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "By default, 'requests' calls wait until the connection is closed.\nThis means a 'requests' call without a timeout will hang the program\nif a response is never received. Consider setting a timeout for all\n'requests'.\n"
+            "text": "Regex `replace_pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "grafana/scripts/sync-dashboards",
+                  "uri": "grafana/scripts/filter-dashboard",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 51,
-                  "startColumn": 16,
-                  "endLine": 51,
-                  "endColumn": 50,
+                  "startLine": 105,
+                  "startColumn": 13,
+                  "endLine": 105,
+                  "endColumn": 57,
                   "snippet": {
-                    "text": "    response = requests.get(url, headers=headers)"
+                    "text": "    found = re.match(replace_pattern, args.replace_name)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "e5eda1921472627fe8c10aa610e9e8dc3a6966f9099fffb7d9cee48b851b80fa9510015362242550d1d86f6c25f6e81e9464ebb700bc4afb77eb41cf4481ffff_0"
+            "matchBasedId/v1": "337e8254a996cef23ba6f1ecf03ff30a4e4e9b12625a93c21378aac2c80e2010c5c0f128fe6f13991b11dbebcfba0f14dfcaca29809cf557ae6a47727951ff46_0"
           },
           "properties": {}
         },
@@ -1260,37 +1260,6 @@
           "properties": {}
         },
         {
-          "ruleId": "89111256-c4dc-363d-b951-f1e30ec739d3",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `cxi_re_pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/collector_network.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 122,
-                  "startColumn": 25,
-                  "endLine": 122,
-                  "endColumn": 62,
-                  "snippet": {
-                    "text": "                match = re.match(cxi_re_pattern, bucket.name)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "94109b897cada68018bae833d97d103ef4a07ba3a2b26c8cdad300097daed4bf852a572d37ce91a3e9c5336ff8c0bff4c9d0d183da821449cd97268945ea5d94_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "8d2fa863-c130-388e-90f8-3b2ae44d3fb7",
           "kind": "fail",
           "level": "warning",
@@ -1322,37 +1291,6 @@
           "properties": {}
         },
         {
-          "ruleId": "e52105a5-6e2f-372c-966e-a2f1f1093b94",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/collector_pm_counters.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 94,
-                  "startColumn": 29,
-                  "endLine": 94,
-                  "endColumn": 57,
-                  "snippet": {
-                    "text": "                    match = re.match(pattern, file.name)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "8cb033a9a5163e2c0a08f1cf433a5b40e9dea7e79b6feb1d6e978f5d0b22cdc2f9283cfb4c716e9e1a33e0493b26c9d2eec376bbb15b4e8ad900578aaf8af753_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "e1794f96-921f-3787-9801-d97079c74180",
           "kind": "fail",
           "level": "warning",
@@ -1380,6 +1318,68 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "e5eda1921472627fe8c10aa610e9e8dc3a6966f9099fffb7d9cee48b851b80fa9510015362242550d1d86f6c25f6e81e9464ebb700bc4afb77eb41cf4481ffff_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "89111256-c4dc-363d-b951-f1e30ec739d3",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `cxi_re_pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/collector_network.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 25,
+                  "endLine": 122,
+                  "endColumn": 62,
+                  "snippet": {
+                    "text": "                match = re.match(cxi_re_pattern, bucket.name)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "94109b897cada68018bae833d97d103ef4a07ba3a2b26c8cdad300097daed4bf852a572d37ce91a3e9c5336ff8c0bff4c9d0d183da821449cd97268945ea5d94_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e52105a5-6e2f-372c-966e-a2f1f1093b94",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `pattern` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/collector_pm_counters.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 29,
+                  "endLine": 94,
+                  "endColumn": 57,
+                  "snippet": {
+                    "text": "                    match = re.match(pattern, file.name)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "8cb033a9a5163e2c0a08f1cf433a5b40e9dea7e79b6feb1d6e978f5d0b22cdc2f9283cfb4c716e9e1a33e0493b26c9d2eec376bbb15b4e8ad900578aaf8af753_0"
           },
           "properties": {}
         },
@@ -1539,37 +1539,6 @@
           "properties": {}
         },
         {
-          "ruleId": "80164702-4a08-365e-92b6-b9830410fd31",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "function `restrict_ips` is defined inside a function but never used"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/node_monitoring.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 5,
-                  "endLine": 86,
-                  "endColumn": 23,
-                  "snippet": {
-                    "text": "    @app.before_request\n    def restrict_ips():\n        if \"0.0.0.0\" in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n            return\n        elif request.remote_addr not in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n            abort(403)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "679d818c3c9dee2d6d0368da1134714696dd337b4d4593cba85b2148123e1062be74014b36a9e7edbf246d64031eb5003598f46e6cad83c75929fd6efd9820f1_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "03c40b4c-2cce-370b-99b6-7e61ca8bd8b3",
           "kind": "fail",
           "level": "warning",
@@ -1597,6 +1566,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "c1ad477aafa94e532689e0f9630426245567b141ad4975fd828467c8575a44c72c588b81090f02c2763e8684a0531d335a177ef3c1810854c1afcebbd13cf0ee_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "80164702-4a08-365e-92b6-b9830410fd31",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "function `restrict_ips` is defined inside a function but never used"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/node_monitoring.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 5,
+                  "endLine": 86,
+                  "endColumn": 23,
+                  "snippet": {
+                    "text": "    @app.before_request\n    def restrict_ips():\n        if \"0.0.0.0\" in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n            return\n        elif request.remote_addr not in monitor.runtimeConfig[\"collector_allowed_ips\"]:\n            abort(403)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "679d818c3c9dee2d6d0368da1134714696dd337b4d4593cba85b2148123e1062be74014b36a9e7edbf246d64031eb5003598f46e6cad83c75929fd6efd9820f1_0"
           },
           "properties": {}
         },
@@ -1632,37 +1632,6 @@
           "properties": {}
         },
         {
-          "ruleId": "5071ebca-8018-3e3f-8b11-bc36c7c27ea7",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "time.sleep() call; did you mean to leave this in?"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/omni_util.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 311,
-                  "startColumn": 13,
-                  "endLine": 311,
-                  "endColumn": 26,
-                  "snippet": {
-                    "text": "            time.sleep(1)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "1ba87a9e1456321321668cc2a6687f47c97c3b4dd7d93e9a4d584ae963b1ac5ab66f5f76cc37a7821e6b7808df1a8d1b306b631a8eef0aeb8eb6e324ae4f0909_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "e1d3670c-eafe-3ffe-a295-1ab2f04d491a",
           "kind": "fail",
           "level": "warning",
@@ -1690,6 +1659,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "4f77abe94764c7f503cd32a7fba1e8436288a46e730be45f7b0cacedb21ff5d8e2235cdbf2a9cb76fc06478301412892b2dffa77be21b38ef1e39d1b213d9fc8_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "5071ebca-8018-3e3f-8b11-bc36c7c27ea7",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "time.sleep() call; did you mean to leave this in?"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/omni_util.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 311,
+                  "startColumn": 13,
+                  "endLine": 311,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "            time.sleep(1)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1ba87a9e1456321321668cc2a6687f47c97c3b4dd7d93e9a4d584ae963b1ac5ab66f5f76cc37a7821e6b7808df1a8d1b306b631a8eef0aeb8eb6e324ae4f0909_0"
           },
           "properties": {}
         },
@@ -1756,37 +1756,6 @@
           "properties": {}
         },
         {
-          "ruleId": "a40e9964-b5b8-3df6-8553-06d8e18cb47a",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/rms_env.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 83,
-                  "startColumn": 23,
-                  "endLine": 83,
-                  "endColumn": 91,
-                  "snippet": {
-                    "text": "            results = subprocess.run(command, capture_output=True, text=True, timeout=5.0)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "9cc4de91423374e5e156b5fc05b7c81f589ca2c58f1c1446aa3425f7928f9fbf1c333d0c67173daea81ac2e91f2c756a13933d9afa5a368981f9eceba3df60e1_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "4e4779a6-82fb-34ac-bcdc-fc5ed2de3405",
           "kind": "fail",
           "level": "warning",
@@ -1814,37 +1783,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "4b45c78e54fc374ed70ee55e1c3a9f3b5d9a182bed64742ea7054188a20b7035ef66dacd1ae6ad3f6320184aafbc9fe8fb2697b82727dd562879d98b77b9ab85_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "95b230d9-b206-382a-b2b3-08adfe4f79f4",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/rms_env.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 92,
-                  "startColumn": 23,
-                  "endLine": 92,
-                  "endColumn": 91,
-                  "snippet": {
-                    "text": "            results = subprocess.run(command, capture_output=True, text=True, timeout=5.0)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "9cc4de91423374e5e156b5fc05b7c81f589ca2c58f1c1446aa3425f7928f9fbf1c333d0c67173daea81ac2e91f2c756a13933d9afa5a368981f9eceba3df60e1_1"
           },
           "properties": {}
         },
@@ -1880,6 +1818,68 @@
           "properties": {}
         },
         {
+          "ruleId": "95b230d9-b206-382a-b2b3-08adfe4f79f4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/rms_env.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 92,
+                  "startColumn": 23,
+                  "endLine": 92,
+                  "endColumn": 91,
+                  "snippet": {
+                    "text": "            results = subprocess.run(command, capture_output=True, text=True, timeout=5.0)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "9cc4de91423374e5e156b5fc05b7c81f589ca2c58f1c1446aa3425f7928f9fbf1c333d0c67173daea81ac2e91f2c756a13933d9afa5a368981f9eceba3df60e1_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a40e9964-b5b8-3df6-8553-06d8e18cb47a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/rms_env.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 23,
+                  "endLine": 83,
+                  "endColumn": 91,
+                  "snippet": {
+                    "text": "            results = subprocess.run(command, capture_output=True, text=True, timeout=5.0)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "9cc4de91423374e5e156b5fc05b7c81f589ca2c58f1c1446aa3425f7928f9fbf1c333d0c67173daea81ac2e91f2c756a13933d9afa5a368981f9eceba3df60e1_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "02bec693-900a-309a-a8e3-e0688e6bc047",
           "kind": "fail",
           "level": "warning",
@@ -1907,6 +1907,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "11016b351f9ff6010264c3581bfafac84919ad90ee7730661cca6d8d5eb4aad85b8af09f7c468c97a76690e5d7f3bb61e28f6f45d775ae842cc46c9a76263840_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "ee05b6a9-7964-30bf-a31f-420f40e5f3a2",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "There's an HTTP request made with requests,\nbut the raise_for_status() utility method isn't used.\nThis can result in request errors going unnoticed\nand your code behaving in unexpected ways,\nsuch as if your authorization API returns a 500 error\nwhile you're only checking for a 401."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/standalone.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 24,
+                  "endLine": 90,
+                  "endColumn": 61,
+                  "snippet": {
+                    "text": "            response = requests.get(victoria_url + endpoint)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "11016b351f9ff6010264c3581bfafac84919ad90ee7730661cca6d8d5eb4aad85b8af09f7c468c97a76690e5d7f3bb61e28f6f45d775ae842cc46c9a76263840_1"
           },
           "properties": {}
         },
@@ -1942,6 +1973,37 @@
           "properties": {}
         },
         {
+          "ruleId": "59899cfe-f628-362a-8105-8588c9f83375",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Running flask app with host 0.0.0.0 could expose the server publicly."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/standalone.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 407,
+                  "startColumn": 5,
+                  "endLine": 407,
+                  "endColumn": 45,
+                  "snippet": {
+                    "text": "    app.run(host=\"0.0.0.0\", port=listenPort)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "6f8516acbf28a4ea6b21fc5ad0b86a814c9c8088f04a1f4ce03f8be894479c3839b60c86d77e7e04bdc58b89f05a85f86a56e2d7697b320847301ff0de60201c_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "e7adfcb3-b97f-3025-92ad-96c9e82c976e",
           "kind": "fail",
           "level": "warning",
@@ -1969,6 +2031,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "cc462cb062ab23c350618077134f6913bdab1fd5101e16b41f43b80d2670666653f2338be2a42ac2ee95ea11bf6dca02fda0828243f82d4d07181c8f5c47bd83_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "4a5ea367-c80a-3276-9b92-746f900256f7",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "function `restrict_ips` is defined inside a function but never used"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "omnistat/standalone.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 424,
+                  "startColumn": 5,
+                  "endLine": 430,
+                  "endColumn": 23,
+                  "snippet": {
+                    "text": "    @app.before_request\n    def restrict_ips():\n        allowed_ips = config[\"omnistat.collectors\"].get(\"allowed_ips\", \"127.0.0.1\")\n        if \"0.0.0.0\" in allowed_ips:\n            return\n        elif request.remote_addr not in allowed_ips:\n            abort(403)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "397b1f67447867328ada65ccf4d87a1033612655147827780a0762731dc4532429cefd922b03d557d3a52abe836182369ed8780fad4efd60c390719fef5bcb27_0"
           },
           "properties": {}
         },
@@ -2004,37 +2097,6 @@
           "properties": {}
         },
         {
-          "ruleId": "59899cfe-f628-362a-8105-8588c9f83375",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Running flask app with host 0.0.0.0 could expose the server publicly."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/standalone.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 407,
-                  "startColumn": 5,
-                  "endLine": 407,
-                  "endColumn": 45,
-                  "snippet": {
-                    "text": "    app.run(host=\"0.0.0.0\", port=listenPort)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "6f8516acbf28a4ea6b21fc5ad0b86a814c9c8088f04a1f4ce03f8be894479c3839b60c86d77e7e04bdc58b89f05a85f86a56e2d7697b320847301ff0de60201c_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "2e1ca249-e1b5-3beb-a008-2c13e2fd59e1",
           "kind": "fail",
           "level": "warning",
@@ -2062,37 +2124,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "7815a73cb774f4bbc8bb5c365f22ad56166e71821b4599dcc3b96125b56c251d43e9af421ed947fbe056cf797bc9f7d3931f7744e178ce1c9df2ac2c0ddd031c_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "4a5ea367-c80a-3276-9b92-746f900256f7",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "function `restrict_ips` is defined inside a function but never used"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "omnistat/standalone.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 424,
-                  "startColumn": 5,
-                  "endLine": 430,
-                  "endColumn": 23,
-                  "snippet": {
-                    "text": "    @app.before_request\n    def restrict_ips():\n        allowed_ips = config[\"omnistat.collectors\"].get(\"allowed_ips\", \"127.0.0.1\")\n        if \"0.0.0.0\" in allowed_ips:\n            return\n        elif request.remote_addr not in allowed_ips:\n            abort(403)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "397b1f67447867328ada65ccf4d87a1033612655147827780a0762731dc4532429cefd922b03d557d3a52abe836182369ed8780fad4efd60c390719fef5bcb27_0"
           },
           "properties": {}
         },
